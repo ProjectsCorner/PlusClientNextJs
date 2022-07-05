@@ -1,0 +1,116 @@
+.main-user-ctr {
+  width: 72%;
+  margin: 25px auto;
+  display: flex;
+}
+
+.main-user-ctr > div:nth-child(1) {
+  flex: 0.5;
+  margin-right: 10px;
+  background-color: #fff;
+  height: fit-content;
+}
+
+.main-user-ctr > div:nth-child(2) {
+  flex: 2;
+  margin-left: 10px;
+  background-color: #fff;
+}
+
+.main-user-ctr > div:nth-child(1) div {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+}
+.user-link {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px !important;
+}
+.user-link > span {
+  margin-left: 5px;
+}
+.user-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  color: #85b811;
+}
+.user-link.active {
+  background-color: #85b811;
+  color: white;
+}
+.user-link:last-child {
+  background-color: #85b811;
+  color: white;
+  font-size: 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-user-ctr > div:nth-child(2) > div:first-child {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  padding: 10px;
+  font-weight: bold;
+}
+
+/*
+ *
+ *user data styling
+*/
+.user-data-ctr {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+.user-data-ctr > div {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.user-data-ctr > div > div:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-weight: bold;
+}
+.user-data-ctr > div > div:not(:first-child) {
+  margin: 10px;
+}
+.user-data-ctr > div > div:not(:first-child) > div:first-child {
+  font-size: 13px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.user-data-ctr > div button {
+  padding: 10px;
+  width: 120px;
+  font-size: 15px;
+  margin: 15px 0px;
+}
+/*
+ *
+ *user data styling
+*/
+
+/*
+ *
+ *Responsive
+*/
+@media screen and (max-width: 1024px) {
+  .main-user-ctr {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-user-ctr > div:first-child {
+    display: none;
+  }
+  .user-data-ctr {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}

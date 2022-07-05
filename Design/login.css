@@ -1,0 +1,82 @@
+.lg_ctr {
+  width: 70%;
+  margin: 25px auto;
+  display: flex;
+}
+/*
+ * Plus message
+
+*/
+.message-ctr {
+  flex: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.message-ctr > div:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+.message-ctr > div {
+  margin: 10px 30px 10px 0px;
+}
+/*
+ * Plus message
+
+*/
+.lg_form_ctr {
+  flex: 1;
+}
+.form_ctr {
+  height: 75%;
+}
+.login_form {
+  height: 90%;
+  width: 80%;
+  margin: 5% auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.login-inputs-ctr {
+  flex: 2;
+}
+.login-btn-ctr {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.login-logo-ctr {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-logo-ctr > img {
+  height: 75%;
+  width: 75%;
+  object-fit: contain;
+}
+
+/*media queries*/
+
+@media screen and (max-width: 1024px) {
+  .lg_ctr {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lg_ctr {
+    flex-direction: column-reverse;
+  }
+  .login-logo-ctr {
+    display: none;
+  }
+  .message-ctr {
+    border-right: none;
+    margin: 20px 10%;
+  }
+}

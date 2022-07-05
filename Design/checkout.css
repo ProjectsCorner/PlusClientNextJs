@@ -1,0 +1,376 @@
+.-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.search-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  margin: 0px auto;
+  min-height: fit-content;
+}
+.nav {
+  z-index: 20;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
+}
+.order-f {
+  font-size: 24px;
+}
+.p-order-ctr {
+  width: 70vw;
+  margin: 20px auto;
+}
+.p-order-progress {
+  height: 7px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 20px 0px;
+  border-radius: 50px;
+}
+.p-order-progress-b {
+  height: 7px;
+  width: 100%;
+  background-color: #85b811;
+  border-radius: 40px;
+  transition: all 0.5s ease-in-out;
+}
+.-order-ctr {
+  display: flex;
+  justify-content: space-between;
+}
+.-steps {
+  width: 65%;
+}
+.-order {
+  width: 34%;
+}
+.p-order-s-1 {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px #cfcfcf;
+  padding: 5px 0px;
+  margin: 10px 0px;
+  height: fit-content;
+}
+.s-1-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.s-1-head > span > .fas {
+  padding-right: 10px;
+  font-size: 22px;
+}
+.-s-i-1 {
+  color: green;
+}
+._ca {
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  margin: 15px;
+  border-radius: 5px;
+}
+._cad {
+  margin: 5px 20px;
+}
+._ca-btn {
+  width: 60%;
+  margin: 15px;
+  padding: 8px 0px;
+  font-size: 16px;
+  box-shadow: 3px 3px 5px #e2e2e2;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #85b811;
+  cursor: pointer;
+}
+._ca-btn:hover {
+  opacity: 0.6;
+}
+._ca-btn.-sm {
+  width: 75%;
+  margin: 5px;
+  border-radius: 5px;
+}
+.-modify {
+  display: flex;
+  justify-content: center;
+}
+/*delivery method*/
+.deliver {
+  padding: 10px 20px;
+}
+.-d-method {
+  margin-left: 3%;
+}
+.p-order-residence {
+  margin-left: 6%;
+}
+.p-order-name {
+  margin-top: 3%;
+}
+
+.order-f {
+  font-size: 24px;
+}
+.-dm-e,
+.-pm {
+  color: red;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.na {
+  color: red;
+  display: none;
+}
+.p-order-procedure {
+  margin: 10px 5px;
+}
+.p-order-procedure > ol {
+  margin-left: 25px;
+}
+
+.s-1-head > span > .fas {
+  padding-right: 10px;
+  font-size: 22px;
+}
+.-s-i-1 {
+  color: green;
+}
+.p-order-address {
+  padding: 5px 0px 5px 35px;
+}
+.edit {
+  color: #85b811;
+  cursor: pointer;
+}
+#pay-form {
+  margin-top: 10px;
+}
+.mm-input {
+  display: flex;
+  align-items: center;
+}
+.-mm-l {
+  margin-left: 5%;
+}
+.-mm-img {
+  margin-left: 7%;
+}
+.p-order-procedure {
+  margin: 10px 5px;
+}
+.p-order-procedure > ol {
+  margin-left: 25px;
+}
+.cd-image {
+  margin: 5px;
+  padding-left: 3%;
+}
+.am-t-p {
+  margin-right: 25px;
+}
+.-am {
+  display: flex;
+  width: 100%;
+  padding-right: 5px;
+  justify-content: space-between;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+.total {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.-btn-s-pyf {
+  width: 95%;
+  margin: 15px auto;
+  padding: 10px 0px;
+  font-size: 17px;
+  box-shadow: 3px 3px 5px #e2e2e2;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #85b811;
+  cursor: pointer;
+}
+.-btn-a-d {
+  width: 60%;
+  margin: 15px auto;
+  padding: 8px 0px;
+  font-size: 16px;
+  box-shadow: 3px 3px 5px #e2e2e2;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #85b811;
+  cursor: pointer;
+}
+.edit-a-ctr.active {
+  display: none;
+}
+#residence {
+  width: 85%;
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  height: 30px;
+  outline: none;
+  font-size: 17px;
+  margin-top: 5%;
+}
+._add {
+  width: 85%;
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  height: 30px;
+  outline: none;
+  font-size: 17px;
+  margin-top: 5%;
+}
+#-edit-a {
+  margin: 2% 7%;
+  padding: 2%;
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+#other {
+  border: 0;
+  outline: none;
+  width: 70%;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+  margin-top: 5px;
+  font-size: 17px;
+  padding: 5px;
+}
+#or {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+}
+.-edit-p {
+  margin: 2% 7%;
+  width: 85%;
+  padding: 10px 5px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  background-color: #85b811;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #c3c3c3;
+  transform: translateY(-4px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+/*delivery method*/
+.-d-method {
+  margin-left: 2%;
+}
+.p-order-residence {
+  margin-left: 4%;
+}
+.-d-u {
+  margin-left: 1%;
+}
+.p-order-name {
+  margin-top: 2%;
+}
+
+.order-f {
+  font-size: 24px;
+}
+.-dm-e,
+.-pm {
+  color: red;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.na {
+  color: red;
+  display: none;
+}
+._check-item {
+  border-top: 1px solid rgb(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+}
+._check-item > .img {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._check-item > .img > div {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 85px;
+  height: 85px;
+}
+.-item {
+  height: fit-content;
+}
+.-item > div {
+  padding-top: 5px;
+}
+.-st > .-st-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0px;
+  font-size: 15px;
+}
+.totals {
+  margin: 5px;
+  padding: 5px;
+}
+.-o-total {
+  padding: 10px 0px;
+  font-weight: bold;
+  border-top: 1px solid rgb(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+}
+.show_order,
+.other_dn {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+  }
+  .order-f {
+    display: none;
+  }
+  .p-order-ctr {
+    width: 90vw;
+    margin: 20px auto;
+  }
+  .-order-ctr {
+    flex-direction: column-reverse;
+  }
+  .-order-ctr > div {
+    width: 100%;
+  }
+  .-od-ctr {
+    display: none;
+  }
+  .-od-ctr.active {
+    display: block;
+  }
+  .show_order {
+    display: block;
+    opacity: 1;
+  }
+  .show_order:hover {
+    opacity: 1;
+  }
+}

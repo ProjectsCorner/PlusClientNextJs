@@ -1,0 +1,89 @@
+.register-ctr {
+  width: 70%;
+  margin: 15px auto;
+}
+.register-ctr > div:first-child {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.register-ctr > div:nth-child(2) {
+  margin: 10px 0px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  background-color: #85b811;
+}
+.register-ctr > div:nth-child(3) {
+  margin: 10px 0px;
+}
+.register-ctr > div:nth-child(4) {
+  display: flex;
+  margin-top: 20px;
+}
+.register-ctr > div:nth-child(4) > div:nth-child(1) {
+  flex: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.register-ctr > div:nth-child(4) > div:nth-child(2) {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-ctr > div:nth-child(4) > div:nth-child(2) form {
+  width: 70%;
+}
+.register-ctr > div:nth-child(4) > div:nth-child(2) form > div:nth-child(1) {
+  text-align: center;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.register-ctr > div:nth-child(4) > div:nth-child(2) form > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.register-ctr
+  > div:nth-child(4)
+  > div:nth-child(2)
+  form
+  > div:nth-child(2)
+  > hr {
+  flex: 1;
+}
+.register-ctr
+  > div:nth-child(4)
+  > div:nth-child(2)
+  form
+  > div:nth-child(2)
+  > span {
+  padding: 0px 10px;
+}
+
+.register-inputs-ctr-divided {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+@media screen and (max-width: 1024px) {
+  .register-ctr > div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+  }
+  .register-ctr > div:nth-child(4) > div:nth-child(1) {
+    border-right: none;
+  }
+  .register-ctr > div:nth-child(4) > div:nth-child(2) form {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .register-ctr {
+    width: 95%;
+    margin: 15px auto;
+  }
+}

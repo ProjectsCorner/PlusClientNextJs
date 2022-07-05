@@ -1,0 +1,124 @@
+.-ct {
+  padding: 5px;
+  position: relative;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #cccbcb;
+}
+
+.-sc-b,
+.-sc-n {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border: none;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: #85b811;
+  display: none;
+}
+.-sc-b {
+  left: 10px;
+}
+.-sc-n {
+  right: 10px;
+}
+.-ct:hover .-sc-n,
+.-ct:hover .-sc-b {
+  display: block;
+}
+.-sc-n > i,
+.-sc-b > i {
+  pointer-events: none;
+}
+
+.-ch-all {
+  display: flex;
+  justify-content: space-between;
+  background-color: #85b811;
+  padding: 10px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px 5px 0px 0px;
+  height: 40px;
+  color: white;
+}
+.-scroll {
+  /* height: calc(100% - 50px); */
+  margin-top: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+}
+.-ct-item {
+  width: 210px;
+  border-radius: 5px;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 5px;
+}
+.-ct-item:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.-ct-item > div:first-child {
+  flex: 2;
+}
+.-ct-item > div:nth-child(2) {
+  flex: 0.5;
+  padding: 5px 10px;
+}
+.-ct-item > div:first-child img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.-ct-item-name {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+.-ct-item-price {
+  padding: 5px 0px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+}
+.-ct-item-price-before {
+  text-decoration: line-through;
+}
+
+/*media queries*/
+
+/*media queries*/
+@media screen and (max-width: 1200px) {
+  .main-banner-ctr {
+    width: 95%;
+  }
+  .main-welcome-ctr {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .-scroll {
+    overflow-x: scroll;
+  }
+  .-sc-n,
+  .-sc-b {
+    display: none !important;
+  }
+}
