@@ -123,11 +123,13 @@ item reqeust styles
 
 ***/
 .user-help-request-item-ctr {
-  width: 100%;
+  width: 70%;
+  margin: auto;
 }
 .user-help-request-item-ctr > div {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .user-help-request-item-ctr > div > div {
   flex: 1;

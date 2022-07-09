@@ -281,7 +281,7 @@ export default () => {
           <ul className="sd-ns1 sd-ns">
             <div className="sd-hdr">Find Help on Plus</div>
             <li className="sd-item">
-              <Link href="/help/request">
+              <Link href="/request">
                 <span className="sd-item-name">
                   <i className="las la-shopping-basket ctg-icon"></i>
                   Request Your item
@@ -376,7 +376,7 @@ export default () => {
                       : { display: "none" }
                   }
                 >
-                  <Link href="/help/request">
+                  <Link href="/request">
                     <a>
                       <li className="-help">
                         <i className="lar la-user"></i>

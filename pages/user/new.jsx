@@ -41,23 +41,20 @@ export default function Register() {
 
   useEffect(() => {
     document.body.style.backgroundColor = "#fff";
-
-    useEffect(() => {
-      const user = sessionStorage.getItem("token")
-        ? sessionStorage.getItem("token")
-        : localStorage.getItem("token")
-        ? JSON.parse(
-            Base64.decode(
-              sessionStorage.getItem("token")
-                ? sessionStorage.getItem("token")
-                : localStorage.getItem("token")
-            )
+    const user = sessionStorage.getItem("token")
+      ? sessionStorage.getItem("token")
+      : localStorage.getItem("token")
+      ? JSON.parse(
+          Base64.decode(
+            sessionStorage.getItem("token")
+              ? sessionStorage.getItem("token")
+              : localStorage.getItem("token")
           )
-        : null;
-      if (user) {
-        router.push("/");
-      }
-    });
+        )
+      : null;
+    if (user) {
+      router.push("/");
+    }
   }, []);
 
   const form_submit = async (e) => {

@@ -6,9 +6,9 @@ import { Base64 } from "js-base64";
  *
  * Defined components
  */
-import MainHeader from "../../Components/MainHeader";
-import MainFooter from "../../Components/MainFooter";
-import FormsApi from "../../api/api";
+import MainHeader from "../Components/MainHeader";
+import MainFooter from "../Components/MainFooter";
+import FormsApi from "../api/api";
 
 /**
  *
@@ -20,7 +20,7 @@ import { Button, TextField } from "@material-ui/core";
  *
  * firebase
  */
-import { storage } from "../../api/firebase";
+import { storage } from "../api/firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 export default () => {
@@ -112,7 +112,7 @@ export default () => {
     <>
       <MainHeader />
       <main>
-        <section className="width-auto user-help-request-item-ctr">
+        <section className="user-help-request-item-ctr">
           <div>
             <div>
               <img src="/request.svg" alt="ITem " />
