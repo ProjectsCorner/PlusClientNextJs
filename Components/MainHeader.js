@@ -328,7 +328,7 @@ export default () => {
             </div>
             <Link href="/">
               <a className="hdr-nav-logo">
-                <Image
+                <img
                   src={PlusLogo}
                   alt="PLUSSHOPPING"
                   width="150px"
