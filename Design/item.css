@@ -123,8 +123,8 @@ item reqeust styles
 
 ***/
 .user-help-request-item-ctr {
-  width: 70%;
-  margin: auto;
+  width: 75%;
+  margin: 20px auto;
 }
 .user-help-request-item-ctr > div {
   display: flex;
@@ -133,6 +133,7 @@ item reqeust styles
 }
 .user-help-request-item-ctr > div > div {
   flex: 1;
+  margin-right: 10px;
 }
 .user-help-request-item-ctr > div > div:first-child img {
   width: 500px;
@@ -154,6 +155,12 @@ item reqeust styles
   width: fit-content;
 }
 @media screen and (max-width: 1024px) {
+  .user-help-request-item-ctr {
+    width: 85%;
+  }
+  .user-help-request-item-btn-ctr > button {
+    flex: 1;
+  }
   .user-help-request-item-ctr > div {
     flex-direction: column-reverse;
     align-items: center;

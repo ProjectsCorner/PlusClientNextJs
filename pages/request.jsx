@@ -26,7 +26,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 export default () => {
   const router = useRouter();
   const input_ref = useRef(null);
-  const [state, setState] = useState({});
+  const [state, setState] = useState({ req: "1", user: {} });
 
   useEffect(() => {
     setState({
@@ -41,7 +41,7 @@ export default () => {
                 : localStorage.getItem("token")
             )
           )
-        : null,
+        : {},
     });
   }, []);
 
@@ -50,62 +50,62 @@ export default () => {
    * file change
    */
   const file_input_change = (e) =>
-    setState({ ...state, img: e.target.files[0], p: "" });
+    setState({ ...state, img: e.target.files[0] });
 
   const request_upload = async (e) => {
     e.preventDefault();
-    setState({ ...state, req_made: "Please Wait, Making your request...." });
-    let req_data = {};
-    new FormData(e.target).forEach((el, i) => {
-      req_data[i] = el;
-    });
-    req_data["user_id"] = state.user.id || "";
-    if (state.img) {
-      const storageRef = ref(storage, `/images/requests/${state.img.name}`);
-      const uploadTask = uploadBytesResumable(storageRef, state.img);
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const p = Math.round(
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          );
-          setState({ ...state, p });
-        },
-        (error) => {
-          console.log(error);
-        },
-        async () => {
-          await getDownloadURL(uploadTask.snapshot.ref).then(async (url) => {
-            req_data["request_img"] = url;
-            const api_res = await new FormsApi().post(
-              "/user/request/new",
-              req_data
-            );
-            if (api_res !== "Error" && api_res.status) {
-              setState({ ...state, req_made: "Your Request was made...." });
-            } else {
-              setState({
-                ...state,
-                req_made: "Failed, i think its the internet Connection....",
-              });
-            }
+    setState({ ...state, req: "2" });
+    setTimeout(async () => {
+      let req_data = {};
+      new FormData(e.target).forEach((el, i) => {
+        req_data[i] = el;
+      });
+      req_data["user_id"] = state.user.id ? state.user.id : "";
+      if (state.img) {
+        const storageRef = ref(storage, `/images/requests/${state.img.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, state.img);
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {},
+          (error) => {
+            console.log(error);
+          },
+          async () => {
+            await getDownloadURL(uploadTask.snapshot.ref).then(async (url) => {
+              req_data["request_img"] = url;
+              const api_res = await new FormsApi().post(
+                "/user/request/new",
+                req_data
+              );
+              if (api_res !== "Error" && api_res.status) {
+                setState({ ...state, req: "3" });
+              } else {
+                setState({
+                  ...state,
+                  req: "4",
+                });
+              }
+            });
+          }
+        );
+      } else {
+        const api_res = await new FormsApi().post(
+          "/user/request/new",
+          req_data
+        );
+        if (api_res !== "Error" && api_res.status) {
+          setState({ ...state, req: "3" });
+          setTimeout(() => {
+            router.push("/");
+          }, 2000);
+        } else {
+          setState({
+            ...state,
+            req: "4",
           });
         }
-      );
-    } else {
-      const api_res = await new FormsApi().post("/user/request/new", req_data);
-      if (api_res !== "Error" && api_res.status) {
-        setState({ ...state, req_made: "Your Request was made" });
-        setTimeout(() => {
-          router.push("/");
-        }, 2000);
-      } else {
-        setState({
-          ...state,
-          req_made: "Failed, i think its the internet Connection....",
-        });
       }
-    }
+    }, 2000);
   };
 
   return (
@@ -135,6 +135,13 @@ export default () => {
                   style={{ margin: "15px 0px", width: "100%" }}
                   multiline
                 />
+                <TextField
+                  variant="outlined"
+                  label="Your Phone Number"
+                  helperText="Where we can reach you....,  Also you can add an image below so that we know better"
+                  name="request_phone"
+                  style={{ margin: "15px 0px", width: "100%" }}
+                />
                 <div>
                   <div className="user-help-request-item-btn-ctr">
                     <input
@@ -147,7 +154,7 @@ export default () => {
                       variant="outlined"
                       onClick={() => input_ref.current.click()}
                     >
-                      Select Image
+                      Select Pic
                     </Button>
                     <Button
                       variant="outlined"
@@ -158,7 +165,7 @@ export default () => {
                         setState({ ...delete_state });
                       }}
                     >
-                      Clear Image
+                      Clear to Select another pic
                     </Button>
                   </div>
                   <div className="user-help-request-item-img-ctr">
@@ -170,8 +177,8 @@ export default () => {
                             : "/request.svg"
                         }
                         alt=""
-                        height="120px"
-                        width="120px"
+                        height="150px"
+                        width="150px"
                         style={{ borderRadius: "5px" }}
                       />
                     }
@@ -179,10 +186,26 @@ export default () => {
                 </div>
                 <button
                   className="plus-btn"
-                  style={{ margin: "10px 0px", padding: "10px", width: "100%" }}
+                  style={
+                    state.req === "2"
+                      ? {
+                          opacity: ".3",
+                          pointerEvents: "none",
+                          margin: "10px 0px",
+                          padding: "10px",
+                          width: "100%",
+                        }
+                      : { margin: "10px 0px", padding: "10px", width: "100%" }
+                  }
                   type="submit"
                 >
-                  {state.req_made ? state.req_made : "Make your Request"}
+                  {state.req === "1"
+                    ? "Make Your request"
+                    : state.req === "2"
+                    ? "Sending Request..."
+                    : state.req === "3"
+                    ? "Request Sent SuccessFully"
+                    : "Failed to Send, Plus thinks its internet Connection. First check!!!"}
                 </button>
               </form>
             </div>
