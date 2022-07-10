@@ -32,7 +32,8 @@ export default function CheckOut() {
     setState({
       ...state,
       total_amount: totals.total_amount,
-      total_shipping_fee: totals.total_shipping_fee,
+      total_shipping_fee:
+        totals.total_shipping_fee > 3000 ? 3000 : totals.total_shipping_fee,
     });
   };
 

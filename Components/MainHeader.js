@@ -45,7 +45,14 @@ export default () => {
   const submitSearch = (e) => {
     e.preventDefault();
     const searchValue = new FormData(e.target).get("search");
-    router.push(`/catalog?q=${searchValue}`);
+
+    if (router.pathname === "/catalog") {
+      router.push(`/catalog?q=${searchValue}`).then(() => {
+        router.reload();
+      });
+    } else {
+      router.push(`/catalog?q=${searchValue}`);
+    }
   };
 
   useEffect(() => {

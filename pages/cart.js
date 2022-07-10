@@ -59,8 +59,13 @@ const Cart = () => {
         <section className="cart_main_ctr">
           <div className="cart_head_ctr">
             <h1>My Cart</h1>
+            <div style={{ opacity: "0.8", margin: "5px 0px" }}>
+              *Prices may vary from market prices. We shall correct and give you
+              feedback before we process your order...
+            </div>
           </div>
           <div></div>
+
           <div className="cart_items_ctr">
             <div>
               <div>Item</div>

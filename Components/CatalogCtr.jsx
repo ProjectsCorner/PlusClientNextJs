@@ -194,8 +194,16 @@ const CatalogCtr = ({ products, title }) => {
         </div>
       </div>
       <div className="pdts-CatalogCtr">
-        <div className="-b-x">
-          <span>Showing For: {title || "...."}</span>
+        <div
+          className="-b-x"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <span style={{ flex: "1" }}>
+            Showing For: {title || "...."} <br />{" "}
+          </span>
+          <span style={{ opacity: "0.8", fontSize: "12px", flex: "1" }}>
+            *Prices may vary from market prices.
+          </span>
         </div>
         <div className="-b-x">
           {products.length === 0 && <div>No Products to Display...</div>}
