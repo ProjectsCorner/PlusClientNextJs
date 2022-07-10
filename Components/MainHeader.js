@@ -21,8 +21,6 @@ import Close from "@material-ui/icons/Close";
  * imports for assets and styles
  */
 
-import PlusLogo from "../public/logos/plus_logo_black.png";
-
 export default () => {
   /**
    *
@@ -329,7 +327,7 @@ export default () => {
             <Link href="/">
               <a className="hdr-nav-logo">
                 <img
-                  src={PlusLogo}
+                  src="/logos/plus_logo_black.png"
                   alt="PLUSSHOPPING"
                   width="150px"
                   height="60px"
