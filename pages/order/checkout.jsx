@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Base64 } from "js-base64";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/img";
 
 /**
  * Defined Components
@@ -79,11 +80,8 @@ export default function CheckOut() {
       setTimeout(() => {
         setState({ ...state, making_order: false });
         localStorage.removeItem("cart_id");
-        if (state.order_details.payment_method === "cod") {
-          router.push(`/order/finish?order_number=${res.result.order_number}`);
-        } else {
-          router.push(`/order/payment?order_number=${res.result.order_number}`);
-        }
+
+        router.push(`/order/finish?order_number=${res.result.order_number}`);
       }, 2000);
     }
   };
@@ -93,7 +91,7 @@ export default function CheckOut() {
       <div className="nav">
         <div className="search-nav">
           <div className="logo">
-            <img
+            <Image
               src="/logos/plus_logo_color.png"
               alt="PLUSSHOPPING"
               height="50px"
@@ -196,7 +194,7 @@ export default function CheckOut() {
                       <Autocomplete
                         filterSelectedOptions
                         style={{
-                          width: "70%",
+                          width: "95%",
                         }}
                         disablePortal
                         id="tags-standard"
@@ -217,7 +215,7 @@ export default function CheckOut() {
                       <Autocomplete
                         filterSelectedOptions
                         style={{
-                          width: "70%",
+                          width: "95%",
                         }}
                         disablePortal
                         id="tags-standard"
@@ -263,10 +261,7 @@ export default function CheckOut() {
                       <b>Select Your Preferred Payment Method</b>
                     </div>
                     <form id="pay-form" className="_pf" onSubmit={make_order}>
-                      <div
-                        className="mm-input"
-                        style={{ opacity: "0.5", pointerEvents: "none" }}
-                      >
+                      <div className="mm-input">
                         <input
                           required
                           type="radio"
@@ -285,31 +280,33 @@ export default function CheckOut() {
                         />
                         <label htmlFor="payment_method" className="-mm-l">
                           <b>Mobile Money </b>
-                          <small>Disabled for a moment</small>
                         </label>
                       </div>
 
-                      <div
-                        className="p-order-procedure"
-                        style={{ opacity: "0.5", pointerEvents: "none" }}
-                      >
+                      <div className="p-order-procedure">
                         <b>Mobile Money Payment Procedure:</b>
                         <ol>
-                          <li>Click 'Finish Your Order'</li>
-                          <li>Fill In Details On The Next Page</li>
-                          <li>Click 'Pay Now'</li>
-                          <li>Check your phone for payment request</li>
-                          <li>Enter your PIN And Approve</li>
+                          <li>Dial *165*3# on MTN</li>
+                          <li>
+                            Fill in Merchant Code <b>641330</b>
+                          </li>
+                          <li>Follow the Prompts</li>
+                          <li>Check for Business Name : "SAMUEL"</li>
+                          <li>Then Finish your Order Below</li>
                           <li>
                             You will receive SMS/Email confirming a successful
                             payment.
                           </li>
                         </ol>
+                        <small>
+                          *Note: Orders with Mobile Money Option will not be
+                          Processed without Merchant code payment.
+                        </small>
                       </div>
                       <div
                         className="mm-input"
                         style={
-                          state.total_amount
+                          state.total_amount < 20000
                             ? {}
                             : { opacity: "0.5", pointerEvents: "none" }
                         }
@@ -334,9 +331,9 @@ export default function CheckOut() {
                         <label htmlFor="payment_method">
                           <b>Cash On Delivery </b>
                         </label>
-                        {/* {state.total_amount > 20000 && (
+                        {state.total_amount > 15000 && (
                           <small>...Not available, Amount &gt; 20,000...</small>
-                        )} */}
+                        )}
                       </div>
                       <div className="am-t-p">
                         <div className="sub-total -am">
