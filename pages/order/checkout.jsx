@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Base64 } from "js-base64";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Image from "next/img";
+import Image from "next/image";
 
 /**
  * Defined Components
@@ -80,7 +80,6 @@ export default function CheckOut() {
       setTimeout(() => {
         setState({ ...state, making_order: false });
         localStorage.removeItem("cart_id");
-
         router.push(`/order/finish?order_number=${res.result.order_number}`);
       }, 2000);
     }
@@ -95,6 +94,7 @@ export default function CheckOut() {
               src="/logos/plus_logo_color.png"
               alt="PLUSSHOPPING"
               height="50px"
+              width="120px"
             />
           </div>
           <div className="order-f">

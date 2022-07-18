@@ -317,11 +317,13 @@ const Home = ({ sub_categories }) => {
           </section>
         ) : (
           sub_categories.map((el, i) => {
-            return (
-              <section className="products-scroll-ctr" key={i}>
-                <Products sub_category={el} />
-              </section>
-            );
+            if (i < 20) {
+              return (
+                <section className="products-scroll-ctr" key={i}>
+                  <Products sub_category={el} />
+                </section>
+              );
+            }
           })
         )}
       </main>
