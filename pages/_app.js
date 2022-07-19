@@ -47,7 +47,7 @@ export default function Plus({ Component, pageProps }) {
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-12T9E8SJ4Y"
+        src="https://www.googletagmanager.com/gtag/js?id=G-W3HMV40MV5"
         strategy="lazyOnload"
       />
       <Script id="google-analytics" strategy="lazyOnload">
@@ -55,7 +55,7 @@ export default function Plus({ Component, pageProps }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-12T9E8SJ4Y');
+          gtag('config', 'G-W3HMV40MV5');
 
         `}
       </Script>
