@@ -30,6 +30,7 @@ import "../Design/order_finish.css";
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
 import Head from "next/head";
+import Script from "next/script";
 
 const progress = new ProgressBar({
   size: 3,
@@ -49,6 +50,20 @@ export default function Plus({ Component, pageProps }) {
         <title>
           Plus - We add value. Shop the best and low priced Products around you
         </title>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-12T9E8SJ4Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+
+            gtag('config', 'G-12T9E8SJ4Y');
+
+        `}
+        </Script>
       </Head>
       <Component {...pageProps} />
     </>
