@@ -48,6 +48,14 @@ const Catalog = () => {
 
   return (
     <>
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MGSBJDN"
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
       <MainHeader />
       <main className="width-auto width-auto-catalog ">
         <div style={{ width: "100%" }}>

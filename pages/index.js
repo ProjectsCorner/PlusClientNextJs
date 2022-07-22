@@ -25,6 +25,15 @@ import FormsApi from "../api/api";
 const Home = ({ sub_categories }) => {
   return (
     <>
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MGSBJDN"
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+
       <MainHeader />
       <main>
         <section className="main-banner-ctr">
